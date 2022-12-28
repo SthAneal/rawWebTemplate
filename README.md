@@ -1,4 +1,4 @@
-# NOTES:
+# NOTE:
 
 This project uses Firebase as BAS (Backend as Service), and requires to have Realtime Database (to store all the page information), Storage (to store all the images), and Firebase Authentication (to track user login/logout).
 
