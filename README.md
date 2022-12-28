@@ -1,3 +1,207 @@
+# NOTES:
+
+This project uses Firebase as BAS (Backend as Service), and requires to have Realtime Database (to store all the page information), Storage (to store all the images), and Firebase Authentication (to track user login/logout).
+
+This project requires following credential set up:
+
+## Firebase:
+
+Please update your credentials while creating the firebase project into the firebase.js file.
+
+## EmailJs:
+
+Please update your email js credentials into the components/ContactPage.tsx component page.
+
+## Recaptcha:
+
+Please update your recaptcha credentials into the components/ContactPage.tsx component page.
+
+
+# Firebase Realtime-database structure:
+
+Following is the database structure of the backend
+
+```json
+    
+    
+    {
+  "pages": {
+    "1668252234322": {
+      "description": "",
+      "id": 1668252234322,
+      "imageName": "",
+      "imageUrl": "",
+      "pageAlias": "about-us-3",
+      "pageChildList": [
+        {
+          "childId": 1668252256998,
+          "childOrder": 0
+        }
+      ],
+      "pageImageList": [
+        1669633735992,
+        1669633821192
+      ],
+      "pageLinkList": [
+        1669866437453
+      ],
+      "pageType": "page-main-nav",
+      "title": "About us"
+    },
+    "1668252256998": {
+      "description": "",
+      "id": 1668252256998,
+      "imageName": "",
+      "imageUrl": "",
+      "pageAlias": "home-1",
+      "pageChildList": [
+        {
+          "childId": 1668252234322,
+          "childOrder": 1
+        },
+        {
+          "childId": 1668252305239,
+          "childOrder": 2
+        }
+      ],
+      "pageImageList": [
+        1668428330524,
+        1669633735992,
+        1669633821192,
+        1669637685197
+      ],
+      "pageLinkList": [
+        0
+      ],
+      "pageType": "page-main-nav",
+      "title": "Home"
+    },
+    "1668252305239": {
+      "description": "",
+      "id": 1668252305239,
+      "imageName": "",
+      "imageUrl": "",
+      "pageAlias": "our-services-3",
+      "pageImageList": [
+        1668563987743
+      ],
+      "pageLinkList": [
+        0
+      ],
+      "pageType": "page-main-nav",
+      "title": "Our Services"
+    },
+    "1668252330423": {
+      "description": "",
+      "id": 1668252330423,
+      "imageName": "",
+      "imageUrl": "",
+      "pageAlias": "contact-us",
+      "pageChildList": [
+        {
+          "childId": 1671456402819,
+          "childOrder": 1
+        }
+      ],
+      "pageImageList": [
+        1668252419627
+      ],
+      "pageLinkList": [
+        0
+      ],
+      "pageType": "page-main-nav",
+      "title": "Contact Us"
+    },
+    "1668252419627": {
+      "description": "<p>logo</p>",
+      "id": 1668252419627,
+      "imageName": "logo.jpg",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/o/images%20logo.jpg?alt=media&token=4131c60-4994-acc8",
+      "pageAlias": "logo",
+      "pageImageList": [
+        0
+      ],
+      "pageLinkList": [
+        0
+      ],
+      "pageParent": 0,
+      "pageType": "image",
+      "title": "logo"
+    }
+  }
+}
+    
+    
+```
+
+# FrontEnd:
+
+All the data required for the front-end will be handled by FrontEndContext.tsx file inside the context directory. The structure of the front-end states is as below;
+
+```json
+{
+  "frontEndState": {
+    "headerMenu": [
+      "{id: 1668252256998, pageAlias: \"home-1\", pageChildL…}",
+      "{id: 1669865476235, pageAlias: \"events-2\", pageChil…}",
+      "{id: 1668252234322, pageAlias: \"about-us-3\", pageCh…}",
+      "{id: 1668252305239, pageAlias: \"our-services-3\", pa…}",
+      "{id: 1668252330423, pageAlias: \"contact-us\", pageCh…}"
+    ],
+    "logo": {
+      "id": 1668252419627,
+      "title": "logo",
+      "pageAlias": "logo",
+      "imageName": "logo.jpg",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/o/images%20logo.jpg?alt=media&token=4131c60-4994-acc8"
+    },
+    "pagePath": "home-1",
+    "currentPage": {
+      "normalDetail": "{description: \"<p class=\"ql-align-justify\"><strong>…}",
+      "imageDetail": "[{…}, {…}, {…}, {…}]"
+    },
+    "childPage": [
+      "{imageDetail: Array(2), normalDetail: {…}, pageOrde…}",
+      "{imageDetail: Array(1), normalDetail: {…}, pageOrde…}",
+      "{imageDetail: Array(1), normalDetail: {…}, pageOrde…}"
+    ],
+    "copyRight": {
+      "description": "<p>Copy rights: © 2022 ABC Company</p><p><a href=\"policy\" rel=\"noopener noreferrer\" target=\"_blank\">Privacy Policy</a></p>",
+      "id": 1671328791758,
+      "imageName": "",
+      "imageUrl": "",
+      "pageAlias": "copy-rights",
+      "pageImageList": "[0]",
+      "pageLinkList": "[0]",
+      "pageType": "page",
+      "title": "Copy Rights"
+    },
+    "footerContact": {
+      "description": "<p>ABC Address</p><p>0451866980</p><p><a href=\"mailto:info@abc.com\" rel=\"noopener noreferrer\" target=\"_blank\">info@abc.com</a></p>",
+      "id": 1669867089747,
+      "imageName": "",
+      "imageUrl": "",
+      "pageAlias": "footer-contact",
+      "pageImageList": "[0]",
+      "pageLinkList": "[0]",
+      "pageType": "page",
+      "title": "Footer Contact us"
+    },
+    "footerSocialLinks": [
+      "{description: \"<p>https://www.facebook.com/}",
+      "{description: \"<p>https://www.instagram.com/}"
+    ]
+  },
+  "getHeaderMenu": "ƒ getHeaderMenu() {}",
+  "getPageByAttributeAndValue": "ƒ getPageByAttributeAndValue() {}",
+  "getPageDetails": "ƒ getPageDetails() {}"
+}
+
+```
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
