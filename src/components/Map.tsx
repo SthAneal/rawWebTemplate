@@ -19,14 +19,6 @@ const LocationMarker = ({ text } : MarkerType ) => (
 );
 
 export const Map = ({mapData} : MapDataType)=>{
-    //const defaultProps = {
-    // "center": {
-    //     "lat": -42.83818491310331,
-    //     "lng": 147.31145536492832
-    //     },
-    // "zoom": 11
-    // }
-
     const defaultProps = JSON.parse(mapData);
 
     return(
