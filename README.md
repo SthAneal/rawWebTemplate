@@ -136,7 +136,7 @@ Following is the database structure of the backend
 
 # FrontEnd:
 
-All the data required for the front-end will be handled by FrontEndContext.tsx file inside the context directory. The structure of the front-end states is as below;
+All the data required for the front-end will be handled by FrontEndContext.tsx file inside the context directory. The structure of the front-end state is as below;
 
 ```json
 {
