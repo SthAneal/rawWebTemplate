@@ -14,14 +14,14 @@ import { getStorage, ref, uploadBytes, getDownloadURL, deleteObject } from "fire
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBQjXgmL7F1zeFGRZcMpnY51joPBbh9ecM",
-  authDomain: "juvenils-4ab5f.firebaseapp.com",
-  databaseURL: "https://juvenils-4ab5f-default-rtdb.firebaseio.com",
-  projectId: "juvenils-4ab5f",
-  storageBucket: "juvenils-4ab5f.appspot.com",
-  messagingSenderId: "348698741970",
-  appId: "1:348698741970:web:39a242a243f7cafcb7310b",
-  measurementId: "G-WH14SWPB79"
+  apiKey: "----Use your own firebase apiKey----",
+  authDomain: "----Use your own firebase authDomain----",
+  databaseURL: "----Use your own firebase databaseURL----",
+  projectId: "----Use your own firebase projectId----",
+  storageBucket: "----Use your own firebase storageBucket----",
+  messagingSenderId: "----Use your own firebase messagingSenderId----",
+  appId: "----Use your own firebase appId----",
+  measurementId: "----Use your own firebase measurementId----"
 };
 
 // Initialize Firebase
