@@ -136,6 +136,8 @@ Following is the database structure of the backend
 
 # FrontEnd:
 
+Generate your own favicon for the site and place it inside public folder. You can use https://favicon-generator.org/ to create and download your own favicon.
+
 All the data required for the front-end will be handled by FrontEndContext.tsx file inside the context directory. The structure of the front-end state is as below;
 
 ```json
