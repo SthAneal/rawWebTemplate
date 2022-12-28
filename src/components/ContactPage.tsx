@@ -12,8 +12,7 @@ export const ContactPage = ()=>{
     const recaptchaRef = useRef<ReCAPTCHA>(null);
     const {frontEndState} = React.useContext(FrontEndContext);
 
-    // const SECRET_KEY = '6LcwlYsjAAAAAK8vAjkj5n4HQnqSO0DBalSp2qIf';
-    const SITE_KEY = '6LcwlYsjAAAAABHeGOkVWyJwy_0BglOZihDnv8iv';
+    const SITE_KEY = '----Use your own Recaptcha Key----';
     /**
      * Registers a user
      * @param e :React.SyntheticEvent to retrieve the form element using 
@@ -27,27 +26,9 @@ export const ContactPage = ()=>{
         // get captcha value
         const captchaToken =  recaptchaRef?.current?.getValue();
         recaptchaRef?.current?.reset();
-        // let url = `https://www.google.com/recaptcha/api/siteverify?secret=${SECRET_KEY}&response=${captchaToken}`;
-        // let config = {
-        //     url,
-        //     method: "post",
-        //     headers: {
-        //       'Access-Control-Allow-Origin': '*',
-        //       'Access-Control-Allow-Headers': '*',
-        //       'Access-Control-Allow-Credentials': 'true'
-        //     }
-        // };
-        // const res = await axios.request(config);
-
-        // const res = await axios.post(url, {captchaToken});
-
-        // console.log(captchaToken);
-
-        // console.log(e.target);
-        // console.log(e.currentTarget);
 
         if(captchaToken){
-            emailjs.sendForm('service_a4za3nu', 'template_k56b8bq', e.currentTarget, 'ZFSok_Z77eQE-9BTq')
+            emailjs.sendForm('---Use your own service key----', 'template_k56b8bq', e.currentTarget, '----Use your own siteKey for email js----')
                 .then((result)=>{
                     alert('Query sent successfully');
                 }, (error)=>{
